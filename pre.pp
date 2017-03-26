@@ -16,6 +16,11 @@ file { '/etc/puppetlabs/code/environments/production/files/':
   ensure => directory,
 }
 
+file { '/etc/puppetlabs/code/environments/production/hieradata/common.yaml':
+  ensure => file,
+  content => template('/root/fileshare/common.yaml.erb'),
+}
+
 exec { 'install puppetdb':
   command => '/opt/puppetlabs/bin/puppet module install puppetlabs-puppetdb --version 5.1.2',
  }
