@@ -34,12 +34,12 @@ exec { 'install postgresql':
   command => '/opt/puppetlabs/bin/puppet module install puppetlabs-postgresql --version 4.9.0',
  }
 
-exec { 'install puppetexplorer':
-  command => '/opt/puppetlabs/bin/puppet module install spotify-puppetexplorer --version 1.1.1',
- }
-
 exec { 'install apache':
   command => '/opt/puppetlabs/bin/puppet module install puppetlabs-apache --version 1.11.0',
+ }
+
+exec { 'install puppetexplorer':
+  command => '/opt/puppetlabs/bin/puppet module install spotify-puppetexplorer --version 1.1.1',
  }
 
 #exec { 'install foreman':
