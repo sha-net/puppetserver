@@ -12,6 +12,9 @@ class {'::puppetexplorer':
 exec { 'start puppet':
   command => '/opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true',
  }
+exec { 'start puppetserver':
+  command => '/opt/puppetlabs/bin/puppet resource service puppetserver ensure=running enable=true',
+ }
 exec { 'start puppetdb':
   command => '/opt/puppetlabs/bin/puppet resource service puppetdb ensure=running enable=true',
  }
